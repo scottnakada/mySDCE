@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+-->
+    <!--
+        <meta http-equiv="Content-Security-Policy"
+              content="default-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src 'unsafe-inline' 'self'">
+    -->
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <title></title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/Colorful.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="fonts/font-stylesheet.css" />
+
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="css/codiqa.ext.css">
+
+    <!-- jQuery and jQuery Mobile -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- Extra Codiqa features -->
+    <script src="js/codiqa.ext.js"></script>
+
+    <!-- Google Maps JS -->
+    <script src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
+    <script>
+
+        var map,
+                currentPosition,
+                directionsDisplay,
+                directionsService;
+
+        document.addEventListener("deviceready", onGeoReady, false);
+
+        function onGeoReady() {
+            console.log("Geolocation is ready");
+            navigator.splashscreen.hide();
+            navigator.geolocation.getCurrentPosition(locSuccess, locError);
+        };
+
+        /*$(document).live("pagecontainerbeforeshow", "#map_page", function () {
+            navigator.geolocation.getCurrentPosition(locSuccess, locError);
+        });*/
+
+        $(document).on("click", "#directions-button", function (e) {
+            e.preventDefault();
+            calculateRoute();
+        });
+
+        function locSuccess(position) {
+            initialize(position.coords.latitude, position.coords.longitude);
+        }
+
+        function locError(error) {
+            // initialize map with a static predefined latitude, longitude
+            initialize(32.7153, -100.1564);
+        }
+
+        function initialize(lat, lon) {
+            directionsDisplay = new google.maps.DirectionsRenderer();
+            directionsService = new google.maps.DirectionsService();
+
+            currentPosition = new google.maps.LatLng(lat, lon);
+
+            map = new google.maps.Map(document.getElementById('map_canvas'), {
+                zoom: 15,
+                center: currentPosition,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            directionsDisplay.setMap(map);
+
+            var currentPositionMarker = new google.maps.Marker({
+                position: currentPosition,
+                map: map,
+                title: "Current position"
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            google.maps.event.addListener(currentPositionMarker, 'click', function () {
+                infowindow.setContent("Current position: latitude: " + lat + " longitude: " + lon);
+                infowindow.open(map, currentPositionMarker);
+            });
+        }
+
+        function calculateRoute() {
+            var targetDestination = $("#target-dest").val();
+
+            if (currentPosition && currentPosition != '' && targetDestination && targetDestination != '') {
+                var request = {
+                    origin: currentPosition,
+                    destination: targetDestination,
+                    travelMode: google.maps.DirectionsTravelMode["DRIVING"]
+                };
+
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setPanel(document.getElementById("directions"));
+                        directionsDisplay.setDirections(response);
+
+                        /*
+                         var myRoute = response.routes[0].legs[0];
+                         for (var i = 0; i < myRoute.steps.length; i++) {
+                         alert(myRoute.steps[i].instructions);
+                         }
+                         */
+
+                        $("#results").show();
+                    }
+                    else {
+                        $("#results").hide();
+                    }
+                });
+            }
+            else {
+                $("#results").hide();
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<section data-theme="b" data-role="page" id="map">
+    <header data-role="header">
+        <a href="#" onclick="history.back();" data-icon="arrow-l">Back</a>
+
+        <h1>Directions</h1>
+    </header>
+    <article data-theme="b" data-role="content">
+        <div class="ui-bar-a ui-corner-all ui-shadow" style="padding: 1.25em;">
+            <div id="map_canvas" style="height:350px;"></div>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="target-dest" style="display: none;">Target Destination:</label>
+            <input type="text" name="target-dest" id="target-dest" value="8355 Aero Dr. San Diego, California 92123"
+                   style="display: none;"/>
+        </div>
+        <a href="#" id="directions-button" data-role="button" data-inline="true" data-icon="bullets">Get Directions</a>
+
+        <div id="results" style="display: none;">
+            <div id="directions"></div>
+        </div>
+    </article>
+</section>
+</body>
+<!-- http://stackoverflow.com/questions/13345479/clean-example-of-directions-with-google-maps-in-jquery-mobile -->
+</html>

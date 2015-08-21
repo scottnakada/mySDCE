@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src 'unsafe-inline' 'self'">
+    <!--
+        <meta http-equiv="Content-Security-Policy"
+              content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    -->
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <title></title>
+    <link rel="icon" type="image/png" href="css/images/favicon.png">
+
+    <!-- jQuery Mobile CSS with Colorful color scheme -->
+    <!--https://themeroller.jquerymobile.com:443/?ver=1.4.5&style_id=20150809-36-->
+    <link rel="stylesheet" href="css/Colorful.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+    <!--<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>-->
+
+    <!-- Custom fonts from www.fontsquirrel.com (yellowtail script Action-Man regular)-->
+    <link rel="stylesheet" href="fonts/font-stylesheet.css"/>
+
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="css/codiqa.ext.css">
+
+    <!-- jQuery and jQuery Mobile -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/pouchdb-4.0.0.min.js"></script>
+    <script type="text/javascript" src="ClassSchedule.js"></script>
+
+    <!-- Extra Codiqa features -->
+    <script src="js/codiqa.ext.js"></script>
+
+</head>
+<body>
+<!-- Home -->
+<section data-role="page" data-theme="a" id="home">
+    <!-- Home Nav -->
+    <header data-role="header" data-theme="a">
+        <h1>
+            mySDCE
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip" data-icon="home"
+                       class="ui-btn-active ui-state-persist ui-state-disabled">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip" data-icon="star">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip" data-icon="gear">
+                        Computers
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Home Content -->
+    <article data-role="content" data-theme="a">
+        <h2>
+            Welcome<span class="welcomeMsg"></span>
+        </h2>
+
+        <div class="wideImg">
+            <!--<img src="images/graduates.jpg" alt="image"/>-->
+            <img src="images/graduation2.jpg" alt="gradulation"/>
+        </div>
+
+        <p>
+            To provide ongoing learning opportunities, preparing diverse individuals for career advancement, a college
+            education, or enriched lives through good health and personal fulfilment.
+        </p>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#about" data-role="button" data-icon="info" data-inline="true" data-iconpos="notext"
+                   data-transition="pop">About SDCE</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#myClasses">
+                    <a href="#myClasses" data-role="button" data-transition="slideup" data-icon="check"
+                       data-inline="true" id="myClassesBtn">My Classes</a>
+                </a>
+            </div>
+        </div>
+
+    </article>
+    <footer data-role="footer" data-theme="a" data-position="fixed">
+        <h4>
+            Copyright © 2015
+        </h4>
+    </footer>
+</section>
+
+<!-- Art -->
+<section data-role="page" data-theme="a" id="art">
+    <!-- Art Calendar Panel -->
+    <aside data-theme="a" data-role="panel" data-display="overlay" id="artCal">
+
+        <div class="closeRight">
+            <a href="#art" data-rel="close" data-role="button" data-iconpos="notext" data-icon="delete">Close panel</a>
+        </div>
+
+        <h2>October</h2>
+
+        <p>
+        <ul>
+            <li>Oil Painting Expo</li>
+            <li>Explorations in Water Color</li>
+            <li>Pencil Power</li>
+        </ul>
+        </p>
+        <h2>November</h2>
+
+        <p>
+        <ul>
+            <li>Eye of the Camera</li>
+            <li>Pretentious Art Show Alpha</li>
+        </ul>
+        </p>
+    </aside>
+    <!-- Art Nav -->
+    <header data-role="header" data-theme="a">
+        <h1>
+            mySDCE
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip" data-icon="home">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip" data-icon="star"
+                       class="ui-btn-active ui-state-persist ui-state-disabled">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip" data-icon="gear">
+                        Computers
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Art Content -->
+    <article data-role="content" data-theme="a">
+        <h2>
+            Become an artist<span class="welcomeMsg"></span>
+        </h2>
+
+        <div data-role="collapsible-set">
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>
+                    ART101
+                </h3>
+
+                <div class="">
+                    <img src="images/twostudents.jpg" alt="image" class="squareImg" style="">
+                </div>
+                <p>
+                    A basic drawing class taught by instructor Smith.
+                </p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>
+                    ART102
+                </h3>
+
+                <div class="">
+                    <img src="images/training.jpg" alt="image" class="squareImg" style="">
+                </div>
+                <p>
+                    An intermediate class on acrylic paints by instructor Alvarez
+                </p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>
+                    ART103
+                </h3>
+
+                <p>
+                    An advanced class on oil paints by instructor Nakamura.
+                </p>
+            </div>
+        </div>
+
+        <div class="ui-grid-a gridAlignCenter">
+            <div class="ui-block-a">
+                <a href="#" data-role="button" data-icon="bullets"
+                   data-inline="true"
+                   onclick="getURL('http://sdce.edu/class-schedule');">
+                    SDCE Catalog
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#artCal" data-role="button" data-icon="calendar" data-inline="true">
+                    Art Calendar
+                </a>
+            </div>
+        </div>
+
+    </article>
+    <footer data-role="footer" data-theme="a" data-position="fixed">
+        <h4>
+            Copyright © 2015
+        </h4>
+    </footer>
+</section>
+<!-- Computer -->
+<section data-role="page" data-theme="a" id="computer">
+    <!-- Computer Nav -->
+    <header data-role="header" data-theme="a">
+        <h1>
+            mySDCE
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip" data-icon="home">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip" data-icon="star">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip" data-icon="gear"
+                       class="ui-btn-active ui-state-persist ui-state-disabled">
+                        Computers
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Computer Content -->
+    <article data-role="content" data-theme="a">
+        <h2>
+            Learn about computers<span class="welcomeMsg"></span>
+        </h2>
+
+        <div class="wideImg">
+            <img src="images/computer2.jpg" alt="computers"/>
+        </div>
+
+        <div class="listViewSize">
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider" role="heading">
+                    Basic Classes
+                </li>
+                <li>
+                    <a href="#bascom" data-transition="slideup">
+                        COM101 - Intro to the PC
+                    </a>
+                </li>
+                <li>
+                    COM102 - Intro to the Mac
+                </li>
+                <li data-role="list-divider" role="heading">
+                    Intermediate Classes
+                </li>
+                <li>
+                    <a href="#intcom" data-transition="slideup">
+                        COM201 - Intro to Linux
+                    </a>
+                </li>
+                <li data-role="list-divider" role="heading">
+                    Advanced Classes
+                </li>
+                <li>
+                    Coming Soon
+                </li>
+            </ul>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+            </div>
+            <div class="ui-block-b">
+            </div>
+            <div class="ui-block-a">
+            </div>
+            <div class="ui-block-b">
+            </div>
+        </div>
+    </article>
+    <footer data-role="footer" data-theme="a" data-position="fixed">
+        <h4>
+            Copyright © 2015
+        </h4>
+    </footer>
+</section>
+<!-- Basic Computer Classes Screen -->
+<section data-role="page" data-theme="a" id="bascom">
+    <header data-role="header" data-theme="a" data-add-back-btn="true">
+        <h1 class="pc-title">Basic Computer Classes</h1>
+    </header>
+    <article data-role="content" data-theme="a">
+        <h2>Get up to speed in the basics</h2>
+
+        <p>Provides instruction in basic microcomputer applications using Microsoft Office Suite:
+            Microsoft Word, Excel, PowerPoint, and Access.</p>
+    </article>
+</section>
+<!-- Intermediate Computer Classes Screen -->
+<section data-role="page" data-theme="a" id="intcom">
+    <header data-role="header" data-theme="a" data-add-back-btn="true">
+        <h1 class="pc-title">Intermediate Computer Classes</h1>
+    </header>
+    <article data-role="content" data-theme="a">
+        <h2>Learning the Open Source OS</h2>
+
+        <p>Through Linux courses, students learn to operate and maintain computer and network systems
+            using the Linux operating system. These courses are available in certificate as well as
+            bachelor's and master's degree programs.
+        </p>
+    </article>
+</section>
+<!-- About Popup -->
+<section data-role="page" data-theme="a" data-dialog="true" id="about">
+    <header data-role="header" data-theme="a">
+        <h1>About SDCE</h1>
+    </header>
+    <article data-role="content" data-theme="a">
+        <h2>Celebrating 100 Years</h2>
+
+        <div class="wideImg">
+            <img src="images/students.jpg" alt="image">
+        </div>
+        <p>See you in the next 100!</p>
+
+        <div class="ui-grid-a gridAlignCenter">
+            <div class="ui-block-a">
+                <a href="dir.html" rel="external" data-role="button" data-inline="true" data-icon="navigation">
+                    Get Directions
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#" onclick="customize();" data-role="button" data-inline="true" data-icon="user">
+                    Customize
+                </a>
+            </div>
+			<div class="ui-block-a">
+                <a href="#" onclick="emailUs();" data-role="button" data-icon="mail">
+                    Email Us
+                </a>
+            </div>
+			<div class="ui-block-b">
+			<a href="#" data-role="button" data-icon="action" onclick="shareApp();">Share the App</a>
+			</div>
+        </div>
+    </article>
+</section>
+<!-- myClasses Screen -->
+<section data-role="page" data-theme="a" id="myClasses">
+    <header data-role="header" data-theme="a" data-add-back-btn="true">
+        <h1>My Classes</h1>
+    </header>
+    <article data-role="content" data-theme="a">
+
+        <form id="classForm">
+
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <input type="button" value="Show" data-icon="star" onclick="showClasses();">
+                </div>
+                <div class="ui-block-b">
+                    <input type="button" value="Clean DB" data-icon="action" onclick="cleanDatabase();">
+                </div>
+                <div class="ui-block-c">
+                    <input type="button" value="Upload" data-icon="arrow-u" onclick="loadClasses();">
+                </div>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>
+                    Add Class
+                </h3>
+                <fieldset class="ui-grid-solo">
+                    <div class="ui-blck-a">
+                        <input type="text" name="addClass" id="addClass" placeholder="Class Title">
+                    </div>
+                    <div class="ui-block-a">
+                        <input type="text" name="addInstructor" id="addInstructor" placeholder="Instructor">
+                    </div>
+                    <div class="ui-block-a">
+                        <input type="text" name="addLocation" id="addLocation" placeholder="Location">
+                    </div>
+                    <div class="ui-block-a">
+                        <input type="text" name="addCategory" id="addCategory" placeholder="Category">
+                    </div>
+                </fieldset>
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="text" name="add_id" id="add_id" placeholder="ID">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="text" name="addCourse" id="addCourse" placeholder="Course Number">
+                    </div>
+                </fieldset>
+                <fieldset class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <input type="text" name="addDays" id="addDays" placeholder="Days">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="text" name="addStartDate" id="addStartDate"
+                               data-role="date" placeholder="Start Date">
+                    </div>
+                    <div class="ui-block-c">
+                        <input type="text" name="addStartTime" id="addStartTime" placeholder="Start Time">
+                    </div>
+                </fieldset>
+                <fieldset class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <input type="text" name="addRoom" id="addRoom" placeholder="Room">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="text" name="addEndDate" id="addEndDate" data-role="date"
+                               placeholder="End Date">
+                    </div>
+                    <div class="ui-block-c">
+                        <input type="text" name="addEndTime" id="addEndTime" placeholder="End Time">
+                    </div>
+                </fieldset>
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" value="Add Class" data-icon="check" onclick="addClasses();">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" value="Clear" data-icon="delete" onclick="clearFields();">
+                    </div>
+                </fieldset>
+            </div>
+
+        </form>
+
+        <div id="messages"></div>
+
+        <div id="theResult">
+
+        </div>
+    </article>
+
+</section>
+<!-- Check to see if the user has added their name -->
+<script>
+    loadName();
+</script>
+</body>
+</html>

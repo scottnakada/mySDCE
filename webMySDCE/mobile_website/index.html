@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link rel="icon" type="image/png" href="css/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="css/images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/Colorful.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="css/codiqa.ext.css">
+
+    <!-- jQuery and jQuery Mobile -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Extra Codiqa features -->
+    <script src="js/codiqa.ext.js"></script>
+
+</head>
+<body>
+<!-- Home -->
+<section data-role="page" id="home">
+    <header data-theme="a" data-role="header">
+        <h1>
+            mySDCE
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip" data-icon="home"
+                       class="ui-btn-active ui-state-persist ui-state-disabled">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip" data-icon="star">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip" data-icon="gear">
+                        Computers
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article data-role="content">
+        <h2>
+            Welcome<span class="welcomeMsg"></span>
+        </h2>
+
+        <div class="wideImg">
+            <!--<img src="images/graduates.jpg" alt="image"/>-->
+            <img src="images/graduation2.jpg" alt="gradulation"/>
+        </div>
+
+        <p>
+            To provide ongoing learning opportunities, preparing diverse individuals for career advancement, a college
+            education, or enriched lives through good health and personal fulfilment.
+        </p>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#about" data-role="button" data-icon="info" data-inline="true" data-iconpos="notext"
+                   data-transition="pop">About SDCE</a>
+            </div>
+            <div class="ui-block-b">
+            </div>
+        </div>
+
+    </article>
+    <footer data-theme="a" data-role="footer" data-position="fixed">
+        <h4>
+            Copyright © 2015
+        </h4>
+    </footer>
+</section>
+<!-- Art -->
+<section data-role="page" id="art">
+    <aside data-role="panel" data-display="overlay" id="artCal">
+
+        <div class="closeRight">
+            <a href="#art" data-rel="close" data-role="button" data-iconpos="notext" data-icon="delete">Close panel</a>
+        </div>
+
+        <h2>October</h2>
+
+        <p>
+        <ul>
+            <li>Oil Painting Expo</li>
+            <li>Explorations in Water Color</li>
+            <li>Pencil Power</li>
+        </ul>
+        </p>
+
+        <h2>November</h2>
+
+        <p>
+        <ul>
+            <li>Eye of the Camera</li>
+            <li>Pretentious Art Show Alpha</li>
+        </ul>
+        </p>
+    </aside>
+    <header data-theme="a" data-role="header">
+        <h1>
+            mySDCE
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip" data-icon="home">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip" data-icon="star"
+                       class="ui-btn-active ui-state-persist ui-state-disabled">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip" data-icon="gear">
+                        Computers
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article data-role="content">
+        <h2>
+            Become an artist
+            <span class="welcomeMsg"></span>
+        </h2>
+
+        <div data-role="collapsible-set">
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>
+                    ART101
+                </h3>
+
+                <div class="">
+                    <img src="images/twostudents.jpg" alt="image" class="squareImg" style="">
+                </div>
+                <p>
+                    A basic drawing class taught by instructor Smith.
+                </p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>
+                    ART102
+                </h3>
+
+                <div class="">
+                    <img src="images/training.jpg" alt="image" class="squareImg" style="">
+                </div>
+                <p>
+                    An intermediate class on acrylic paints by instructor Alvarez
+                </p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>
+                    ART103
+                </h3>
+
+                <p>
+                    An advanced class on oil paints by instructor Nakamura.
+                </p>
+            </div>
+        </div>
+
+        <div class="ui-grid-a gridAlignCenter">
+            <div class="ui-block-a">
+                <a href="http://sdce.edu/class-schedule" data-role="button" data-icon="bullets" rel="external"
+                   target="_blank"
+                   data-inline="true">
+                    SDCE Catalog
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#artCal" data-role="button" data-icon="calendar" data-inline="true">
+                    Art Calendar
+                </a>
+            </div>
+        </div>
+
+    </article>
+    <footer data-theme="a" data-role="footer" data-position="fixed">
+        <h4>
+            Copyright © 2015
+        </h4>
+    </footer>
+</section>
+<!-- Computer -->
+<section data-role="page" id="computer">
+    <header data-theme="a" data-role="header">
+        <h1>
+            mySDCE
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip" data-icon="home">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip" data-icon="star">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip" data-icon="gear"
+                       class="ui-btn-active ui-state-persist ui-state-disabled">
+                        Computers
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article data-role="content">
+        <h2>
+            Learn about computers
+            <span class="welcomeMsg"></span>
+        </h2>
+
+        <div class="wideImg">
+            <img src="images/computer.jpg" alt="computers"/>
+        </div>
+
+        <div class="listViewSize">
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider" role="heading">
+                    Basic Classes
+                </li>
+                <li>
+                    <a href="#bascom" data-transition="slideup">
+                        COM101 - Intro to the PC
+                    </a>
+                </li>
+                <li>
+                    COM102 - Intro to the Mac
+                </li>
+                <li data-role="list-divider" role="heading">
+                    Intermediate Classes
+                </li>
+                <li>
+                    <a href="#intcom" data-transition="slideup">
+                        COM201 - Intro to Linux
+                    </a>
+                </li>
+                <li data-role="list-divider" role="heading">
+                    Advanced Classes
+                </li>
+                <li>
+                    Coming Soon
+                </li>
+            </ul>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+            </div>
+            <div class="ui-block-b">
+            </div>
+            <div class="ui-block-a">
+            </div>
+            <div class="ui-block-b">
+            </div>
+        </div>
+    </article>
+    <footer data-theme="a" data-role="footer" data-position="fixed">
+        <h4>
+            Copyright © 2015
+        </h4>
+    </footer>
+</section>
+<section data-role="page" id="bascom">
+    <header data-theme="a" data-role="header" data-add-back-btn="true">
+        <h1>Basic Computer Classes</h1>
+    </header>
+    <article data-role="content">
+        <h2>Get up to speed in the basics</h2>
+
+        <p>Provides instruction in basic microcomputer applications using Microsoft Office Suite:
+            Microsoft Word, Excel, PowerPoint, and Access.</p>
+    </article>
+</section>
+<section data-role="page" id="intcom">
+    <header data-theme="a" data-role="header" data-add-back-btn="true">
+        <h1>Intermediate Computer Classes</h1>
+    </header>
+    <article data-role="content">
+        <h2>Learning the Open Source OS</h2>
+
+        <p>Through Linux courses, students learn to operate and maintain computer and network systems
+            using the Linux operating system. These courses are available in certificate as well as
+            bachelor's and master's degree programs.
+        </p>
+    </article>
+</section>
+<section data-role="page" data-dialog="true" id="about">
+    <header data-theme="a" data-role="header">
+        <h1>About SDCE</h1>
+    </header>
+    <article data-role="content">
+        <h2>Celebrating 100 Years</h2>
+
+        <div class="wideImg">
+            <img src="images/students.jpg" alt="image">
+        </div>
+        <p>See you in the next 100!</p>
+
+        <div class="ui-grid-a gridAlignCenter">
+            <div class="ui-block-a">
+                <a href="dir.html" rel="external" data-role="button" data-inline="true" data-icon="navigation">
+                    Get Directions
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#" onclick="customize();" data-role="button" data-inline="true" data-icon="user">
+                    Customize
+                </a>
+            </div>
+        </div>
+    </article>
+</section>
+<script>
+    loadName();
+</script>
+</body>
+</html>

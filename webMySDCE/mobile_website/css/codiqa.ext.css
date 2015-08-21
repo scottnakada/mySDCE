@@ -1,0 +1,62 @@
+/* Put your custom CSS here */
+.wideImg {
+    width: 100%;
+    border-radius: 25px;
+    /*border: 25px double blueviolet;*/
+    overflow: hidden;
+    line-height: 0;
+    box-shadow: 10px 10px 10px black;
+}
+
+/*.wideImg img {
+    position: relative;
+    left: -200px;
+}*/
+
+.squareImg {
+    width: 100%;
+}
+
+.divCenter {
+    /* background-color: pink; */
+    text-align: center;
+}
+
+/*
+.ui-page-theme-a {
+    background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /!* W3C *!/
+    color: black;
+}
+
+.ui-page-theme-a h2, .ui-page-theme-a h3 {
+    color: lightslategray;
+}
+
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit {
+    background: linear-gradient(to bottom, #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 76%, #419ad6 86%, #4bb8f0 92%, #3a8bc2 95%, #26558b 100%); /!* W3C *!/
+    color: white;
+    text-shadow: none;
+    /!* text-shadow: 2px 2px 1px red *!/
+}
+
+.ui-page-theme-a .ui-btn:hover, html .ui-bar-a .ui-btn:hover {
+    background-color: lavender;
+}
+
+.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active {
+    background-color: lightsteelblue;
+}
+*/
+
+.gridAlignCenter {
+    text-align: center;
+}
+
+.closeRight {
+    float: right;
+}
+
+.listViewSize {
+    width: 75%;
+    margin: auto;
+}

@@ -1,0 +1,120 @@
+/* Put your custom CSS here */
+.wideImg {
+    width: 100%;
+    border-radius: 25px;
+    /*border: 25px double blueviolet;*/
+    overflow: hidden;
+    line-height: 0;
+    box-shadow: 10px 10px 10px black;
+}
+
+/*.wideImg img {
+    position: relative;
+    left: -200px;
+}*/
+
+.squareImg {
+    width: 100%;
+}
+
+.divCenter {
+    /* background-color: pink; */
+    text-align: center;
+}
+
+/*
+
+.ui-page-theme-a {
+    background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /!* W3C *!/
+    color: black;
+}
+
+.ui-page-theme-a h2, .ui-page-theme-a h3 {
+    color: lightslategray;
+}
+
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit {
+    background: linear-gradient(to bottom, #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 76%, #419ad6 86%, #4bb8f0 92%, #3a8bc2 95%, #26558b 100%); /!* W3C *!/
+    color: white;
+    text-shadow: none;
+    /!* text-shadow: 2px 2px 1px red *!/
+}
+
+.ui-page-theme-a .ui-btn:hover, html .ui-bar-a .ui-btn:hover {
+    background-color: lavender;
+}
+
+.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active {
+    background-color: lightsteelblue;
+}
+*/
+
+.gridAlignCenter {
+    text-align: center;
+}
+
+.closeRight {
+    float: right;
+}
+
+.listViewSize {
+    width: 75%;
+    margin: auto;
+}
+
+h1.ui-title.h1Pc {
+    font-size: 5em;
+    margin-left: 75px;
+}
+
+.ui-header .ui-title {
+    font-size: 1.3em;
+    margin: 0 10%;
+}
+
+.ui-disabled, .ui-state-disabled, button[disabled], .ui-select .ui-btn.ui-state-disabled {
+    opacity: .5;
+}
+
+article.ui-content h2 {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.ui-footer .ui-title {
+    font-size: .75em;
+}
+
+h1.ui-title.pc-title {
+    margin-left: 20%;
+    /*font-size: 1em;*/
+}
+
+/* For styling elements of the MyClasses Results */
+#theResult {
+    margin-top: .4em;
+}
+
+#classTable {
+/*    width: 90%;
+    margin: auto; /!* Centers the table *!/*/
+    margin-bottom: .8em;
+    table-layout: fixed;
+    text-wrap: normal;
+    word-wrap: break-word;
+}
+
+#classTable th {
+    background-color: purple;
+    color: white;
+}
+
+#classTable tr:nth-of-type(odd)  {
+    background-color: grey;
+    color: white;
+}
+
+.divTwoCol {
+    width: 85%;
+    margin: auto;
+}
