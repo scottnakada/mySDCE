@@ -1,0 +1,18 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+.idea
+
+androidMySDCE/hooks
+androidMySDCE/platforms
+androidMySDCE/plugins
+
+ionMySDCE/node_modules/
+ionMySDCE/platforms/
+ionMySDCE/plugins/
+
+yoMySDCE/node_modules
+yoMySDCE/.tmp
+yoMySDCE/client/bower_components
+yoMySDCE/server/config/local.env.js
+yoMySDCE/npm-debug.log
