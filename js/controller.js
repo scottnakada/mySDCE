@@ -8,10 +8,12 @@
 
                 // Links to the Platform Apps
                 $scope.web = {
-                    link: "http://scottnakada.github.io/mySDCE/webMySDCE/mobile_website/index.html"
+                    link: "http://scottnakada.github.io/mySDCE/webMySDCE/mobile_website/index.html",
+                    image: "images/LaptopMySDCE.png"
                 };
                 $scope.android = {
-                    link: "http://www.amazon.com/Quickstart-Prototypes-mySDCE-Nakada/dp/B013W3P9B6/ref=sr_1_3?s=mobile-apps&ie=UTF8&qid=1440195111&sr=1-3&keywords=mysdce&pebp=1440195117698&perid=11FB0E2JS7A86MM2SYKC"
+                    link: "http://www.amazon.com/Quickstart-Prototypes-mySDCE-Nakada/dp/B013W3P9B6/ref=sr_1_3?s=mobile-apps&ie=UTF8&qid=1440195111&sr=1-3&keywords=mysdce&pebp=1440195117698&perid=11FB0E2JS7A86MM2SYKC",
+                    image: "images/AndroidMySDCE.png"
                 };
                 $scope.ios = {
                     link: "#ios",

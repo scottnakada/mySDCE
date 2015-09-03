@@ -104,10 +104,10 @@
 
         <div class="row">
             <a data-ng-href="{{web.link}}">
-                <img data-ng-src="{{details.web.image}}" data-ng-show="platforms.web"/>
+                <img data-ng-src="{{web.image}}" height="200px" data-ng-show="platforms.web"/>
             </a>
             <a data-ng-href="{{android.link}}">
-                <img data-ng-src="{{details.android.image}}" data-ng-show="platforms.android"/>
+                <img data-ng-src="{{android.image}}" height="200px" data-ng-show="platforms.android"/>
             </a>
             <a data-ng-href="{{ios.link}}">
                 <img data-ng-src="{{details.ios.image}}" data-ng-show="platforms.ios"/>
@@ -240,7 +240,7 @@
             <ol>
                 <li>
                     <a data-ng-href="{{web.link}}">
-                        <img data-ng-src="{{details.web.image}}" data-ng-show="platforms.web"/>
+                        <img data-ng-src="{{web.image}}" height="200px" data-ng-show="platforms.web"/>
                     </a>
                     On the <a data-ng-href="{{web.link}}">web</a>:<br><br>
                     <iframe width="100%" height="400px"
@@ -250,7 +250,7 @@
                 </li>
                 <li>
                     <a data-ng-href="{{android.link}}">
-                        <img data-ng-src="{{details.android.image}}" data-ng-show="platforms.android"/>
+                        <img data-ng-src="{{android.image}}" height="200px" data-ng-show="platforms.android"/>
                     </a>
                     On Android devices through the
                     <a data-ng-href="{{android.link}}">
